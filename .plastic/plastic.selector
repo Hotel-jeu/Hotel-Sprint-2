@@ -1,0 +1,4 @@
+repository "Hotel@Hotel2024@cloud"
+  path "/"
+    br "/main"
+    co "/main"
