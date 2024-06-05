@@ -6,12 +6,16 @@ public class scripTestPorte : MonoBehaviour
 {
     private Animator porteAnimation;
     private bool porteBool;
-    private bool lampeTorchePrise;
+    public AudioClip porteOuvert;
+    public AudioClip porteFermer;
+    private AudioSource porteSource;
     // private bool porteZone;
     void Start()
     {
         porteAnimation = GetComponent<Animator>();
         porteBool = false;
+        porteSource = GetComponent<AudioSource>();
+        // porteGO = GetComponent<GameObject>();
         // porteZone = false;
     }
 
@@ -37,6 +41,14 @@ public class scripTestPorte : MonoBehaviour
             porteBool = !porteBool;
             porteAnimation.SetTrigger(porteBool ? "porteOuvert" : "porteFermer");
 
+            if (!porteBool)
+            {
+                porteSource.PlayOneShot(porteFermer);
+            }
+            else
+            {
+                porteSource.PlayOneShot(porteOuvert);
+            }
         }
     }
 

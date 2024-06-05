@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class SourisVisible : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Rend la souris visible quand ça commence (Utilisé dans le menu)
+
     void Start()
     {
-       Cursor.lockState = CursorLockMode.None;
+        // Débloque le curseur de la souris
+        Cursor.lockState = CursorLockMode.None;
+        // Rend le curseur de la souris visible
         Cursor.visible = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

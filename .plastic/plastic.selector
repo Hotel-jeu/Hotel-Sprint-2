@@ -1,4 +1,3 @@
-repository "Hotel@Hotel2024@cloud"
+rep "Hotel@Hotel2024@cloud"
   path "/"
-    br "/main"
-    co "/main"
+    smartbranch "/main"

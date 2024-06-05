@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 8b22c5b9917ce454395ef8df26fdc211
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Son_Clique: {fileID: 8300000, guid: 69c879a601f3e634eb0269c4db6c8ea6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

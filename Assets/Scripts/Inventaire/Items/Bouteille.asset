@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e573227e667f27b4e8544ea03500077c, type: 3}
+  m_Name: Bouteille
+  m_EditorClassIdentifier: 
+  ID: 2
+  type: 0
+  prefab: {fileID: 6979631538768464901, guid: 22d81f4ec1fadfc45af4655581519d15, type: 3}
+  sonUtilisation: {fileID: 8300000, guid: 7415d7e43c383924ba4c3e1b7e2d2a4f, type: 3}
+  sonDrop: {fileID: 8300000, guid: dafb09f94e098e44b86614fae8d11df4, type: 3}
+  stackable: 1
+  image: {fileID: 21300000, guid: 9fa799a74cf3a5f4f814de12557dd699, type: 3}

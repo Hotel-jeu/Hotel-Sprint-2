@@ -8,26 +8,38 @@ public class GestionParametre : MonoBehaviour
 
     void Start()
     {
-        // Prend les value des parametres inclut dans unity, et les met dans le slider
-        sliderSensi.value = PlayerPrefs.GetFloat("MouseSensitivity", 0.5f);
-        sliderSon.value = PlayerPrefs.GetFloat("SoundVolume", 0.5f);
-        // Quand le slider change de valeur il appelle ces fonctions
-        sliderSensi.onValueChanged.AddListener(delegate { ChangerSensi(); });
+        // Initialise les sliders avec les valeurs sauvegardées ou avec des valeurs par défaut si elles n'existent pas
+        if (!PlayerPrefs.HasKey("SensibiliteSouris"))
+        {
+            PlayerPrefs.SetFloat("SensibiliteSouris", 1f);  // Définir la valeur par défaut
+        }
+        if (!PlayerPrefs.HasKey("VolumeSon"))
+        {
+            PlayerPrefs.SetFloat("VolumeSon", 1f);  // Définir la valeur par défaut
+        }
+
+        sliderSensi.value = PlayerPrefs.GetFloat("SensibiliteSouris");
+        sliderSon.value = PlayerPrefs.GetFloat("VolumeSon");
+        ChangerSensibilite();
+        ChangerVolume();
+
+        // Ajoute les écouteurs pour les changements de valeur
+        sliderSensi.onValueChanged.AddListener(delegate { ChangerSensibilite(); });
         sliderSon.onValueChanged.AddListener(delegate { ChangerVolume(); });
     }
 
-    public void ChangerSensi()
+    public void ChangerSensibilite()
     {
-        // Prend la value du slider et la met en sensibilite dans les vrais parametre
-        float sensibilite = sliderSensi.value;
-        PlayerPrefs.SetFloat("MouseSensitivity", sensibilite);
+        // Met à jour la sensibilité de la souris dans les préférences utilisateur
+        PlayerPrefs.SetFloat("SensibiliteSouris", sliderSensi.value);
+        PlayerPrefs.Save();  // Assure la sauvegarde immédiate des préférences
     }
 
     public void ChangerVolume()
     {
-        // Prend la value du slider et la met en volume dans les vrais parametre
-        float volume = sliderSon.value;
-        PlayerPrefs.SetFloat("SoundVolume", volume);
-        AudioListener.volume = volume;
+        // Met à jour le volume du son dans les préférences utilisateur et applique le volume
+        PlayerPrefs.SetFloat("VolumeSon", sliderSon.value);
+        AudioListener.volume = sliderSon.value;
+        PlayerPrefs.Save();  // Assure la sauvegarde immédiate des préférences
     }
 }

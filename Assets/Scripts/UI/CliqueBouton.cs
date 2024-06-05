@@ -6,21 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class CliqueBouton : MonoBehaviour
 {
-    // Start is called before the first frame update
-
+    // Nom de la scène à charger
     public string SceneACharger;
-    void Start()
-    {
-    
-    }
 
-    // Update is called once per frame
-    void Update()
+    // Fonction publique qui peut être appelée par le OnClick des boutons des canvas
+    public void chargerScene()
     {
-        
-    }
-
-    public void chargerScene() {
+        // Charger la scène spécifiée par SceneACharger
         SceneManager.LoadScene(SceneACharger);
     }
 }

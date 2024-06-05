@@ -14,6 +14,14 @@ TagManager:
   - bouteille
   - porteSorti
   - ennemi
+  - photoPrendre
+  - Inventaire
+  - lampe
+  - gestionnaireInventaire
+  - difference
+  - erreur
+  - placard
+  - saniteDanger
   layers:
   - Default
   - TransparentFX
@@ -25,11 +33,11 @@ TagManager:
   - Layer 0
   - Blue
   - Ui Layer
-  - 
-  - 
-  - 
-  - 
-  - 
+  - perso
+  - lampe
+  - etage1
+  - postgarderie
+  - ObjetJeter
   - 
   - 
   - 
